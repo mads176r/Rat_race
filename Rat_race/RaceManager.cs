@@ -33,7 +33,7 @@ namespace Rat_race
             
         }
 
-        public string ViewRaceReport(Race race)
+        public string ViewRaceLog(Race race) //Der skal ikke stå RaceRepport, da det hedder log andre steder
         {
             Console.WriteLine("ikke færdig");
 
