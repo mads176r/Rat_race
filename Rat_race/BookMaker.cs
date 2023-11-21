@@ -14,8 +14,9 @@ namespace Rat_race
 
         public Bet PlaceBet(Race race, Rat rat, Player player, int money)
         {
-            
-            return;
+            Console.WriteLine("ikke færdig");
+
+            return null;
         }
 
         public void PayOutWinnings(Bet bet) 

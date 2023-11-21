@@ -16,12 +16,16 @@ namespace Rat_race
 
         public Race CreateRace(int raceID, List<Rat> rats, Track track)
         {
-            
+            Console.WriteLine(  "ikke færdig");
+
+            return null;
         }
 
         public Track CreateTrack(string name, int trackLength) //public Track skal være med stort "T", vejledningen siger lille
         {
+            Console.WriteLine("ikke færdig");
 
+            return null;
         }
 
         public void ConductRace(Race race) 
@@ -31,17 +35,23 @@ namespace Rat_race
 
         public string ViewRaceReport(Race race)
         {
+            Console.WriteLine("ikke færdig");
 
+            return null;
         }
 
         public Rat CreateRat(string name)
         {
+            Console.WriteLine("ikke færdig");
 
+            return null;
         }
 
         public Player CreatePlayer(string name, int money) 
-        { 
-            
+        {
+            Console.WriteLine("ikke færdig");
+
+            return null;
         }
     }
 }
