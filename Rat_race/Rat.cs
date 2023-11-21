@@ -22,8 +22,6 @@
         public void ResetRat()
         {
             _position = 0;
-
-            Position = 0;
         }
 
         public int MoveRat()

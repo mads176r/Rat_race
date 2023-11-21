@@ -12,7 +12,7 @@ namespace Rat_race
         public List<Bet> Bets;
 
 
-        public Bet PlaceBet(Race race, Rat rat, Player player, int money)
+        public Bet? PlaceBet(Race race, Rat rat, Player player, int money)
         {
             Bet bet = new Bet();
 
@@ -23,6 +23,9 @@ namespace Rat_race
                 bet.Player = player;
                 bet.Rat = rat;
                 Bets.Add(bet);
+
+                player.Money -= money;
+
                 return bet;
             }
             else
@@ -34,8 +37,8 @@ namespace Rat_race
         }
 
         public void PayOutWinnings(Bet bet) 
-        { 
-            
+        {
+            bet.PayWinnings();
         }
     }
 }

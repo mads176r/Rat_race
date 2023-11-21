@@ -69,7 +69,13 @@
 
         public void PayWinnings()
         {
-            
+            Rat winner = Race.Winner;
+            Rat betRat = Rat;
+
+            if (winner == betRat)
+            {
+                Player.Money += Money * 2;
+            }
         }
     }
 }
