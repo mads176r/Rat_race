@@ -9,14 +9,14 @@ namespace Rat_race
     internal class RaceManager
     {
         public List<Track> Tracks; //Der skal ikke "s" på typen som der bliver vist i vejledningen 
-        public List<Player> Player;
+        public List<Player> PlayerList;
         public List<Race> Races;
         public List<Rat> Rats;
 
 
         public Race CreateRace(int raceID, List<Rat> rats, Track track)
         {
-            Console.WriteLine(  "ikke færdig");
+            Console.WriteLine("ikke færdig");
 
             return null;
         }
@@ -28,9 +28,9 @@ namespace Rat_race
             return null;
         }
 
-        public void ConductRace(Race race) 
+        public void ConductRace(Race race)
         {
-            
+
         }
 
         public string ViewRaceLog(Race race) //Der skal ikke stå RaceRepport, da det hedder log andre steder
@@ -42,15 +42,48 @@ namespace Rat_race
 
         public Rat CreateRat(string name)
         {
-            Console.WriteLine("ikke færdig");
+            Rat rat = new Rat();
+            rat.Name = name;
+            rat.Position = 0;
 
-            return null;
+            return rat;
         }
 
-        public Player CreatePlayer(string name, int money) 
+        public Player CreatePlayer(string userName, string password, int money)
         {
-            Console.WriteLine("ikke færdig");
+            Player player = new Player();
+            player.UserName = userName;
+            player.Password = password;
+            player.Money = money;
 
+            PlayerList.Add(player);
+
+            return player;
+        }
+
+        public Player LoginToPlayer(string userName, string password)
+        {
+            Player player = new Player();
+
+            if (!PlayerList.Any())
+            {
+                Player user = PlayerList.FirstOrDefault(u => u.UserName == userName);
+                if (user != null)
+                {
+                    if (user.Password == password)
+                    {
+                        return user;
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Wrong password or username");
+                }
+            }
+            else
+            {
+                Console.WriteLine("No player exist");
+            }
             return null;
         }
     }

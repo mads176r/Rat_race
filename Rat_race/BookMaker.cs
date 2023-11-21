@@ -14,9 +14,23 @@ namespace Rat_race
 
         public Bet PlaceBet(Race race, Rat rat, Player player, int money)
         {
-            Console.WriteLine("ikke færdig");
+            Bet bet = new Bet();
 
-            return null;
+            if (player.Money >= money)
+            {
+                bet.Money = money;
+                bet.Race = race;
+                bet.Player = player;
+                bet.Rat = rat;
+                Bets.Add(bet);
+                return bet;
+            }
+            else
+            {
+                Console.WriteLine("Insufficient funds. You have " + player.Money + " left");
+                return null;
+            }
+
         }
 
         public void PayOutWinnings(Bet bet) 
