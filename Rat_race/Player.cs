@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Rat_race
 {
-    internal class Player
+    public class Player
     {
         public string UserName;
         private string _password;

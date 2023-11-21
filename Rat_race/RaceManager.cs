@@ -6,32 +6,32 @@ using System.Threading.Tasks;
 
 namespace Rat_race
 {
-    internal class RaceManager
+    public class RaceManager
     {
-        public List<Track> Tracks; //Der skal ikke "s" på typen som der bliver vist i vejledningen 
-        public List<Player> PlayerList;
-        public List<Race> Races;
-        public List<Rat> Rats;
+        internal List<Track> Tracks; //Der skal ikke "s" på typen som der bliver vist i vejledningen 
+        internal List<Player> PlayerList;
+        internal List<Race> Races;
+        internal List<Rat> Rats;
 
 
-        public Race CreateRace(int raceID, List<Rat> rats, Track track)
-        {
-            Console.WriteLine("ikke færdig");
+        //public Race CreateRace(int raceID, List<Rat> rats, Track track)
+        //{
+        //    Console.WriteLine("ikke færdig");
 
-            return null;
-        }
+        //    return null;
+        //}
 
-        public Track CreateTrack(string name, int trackLength) //public Track skal være med stort "T", vejledningen siger lille
-        {
-            Console.WriteLine("ikke færdig");
+        //public Track CreateTrack(string name, int trackLength) //public Track skal være med stort "T", vejledningen siger lille
+        //{
+        //    Console.WriteLine("ikke færdig");
 
-            return null;
-        }
+        //    return null;
+        //}
 
-        public void ConductRace(Race race)
-        {
+        //public void ConductRace(Race race)
+        //{
 
-        }
+        //}
 
         public string ViewRaceLog(Race race) //Der skal ikke stå RaceRepport, da det hedder log andre steder
         {

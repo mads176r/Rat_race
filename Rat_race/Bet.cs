@@ -1,6 +1,6 @@
 ﻿namespace Rat_race
 {
-    internal class Bet
+    public class Bet
     {
         private int _money;
         public int Money

@@ -1,6 +1,6 @@
 ﻿namespace Rat_race
 {
-    internal class Race
+    public class Race
     {
         public int RaceID;
         public List<Rat> Rats;
