@@ -3,13 +3,10 @@
     internal class Race
     {
         public int RaceID;
-
-        //rat list
-
+        public List<Rat> Rats;
         public Track RaceTrack;
         private Rat _winner;
         private string _log;
-
 
 
         public void ConductRace()

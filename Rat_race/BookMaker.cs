@@ -6,17 +6,21 @@ using System.Threading.Tasks;
 
 namespace Rat_race
 {
-    internal class BookMaker
+    internal class BookMaker //Fejl i navnet på vejledningen
     {
 
-
+        public List<Bet> Bets;
 
 
         public Bet PlaceBet(Race race, Rat rat, Player player, int money)
         {
-            money++;
-
+            
             return;
+        }
+
+        public void PayOutWinnings(Bet bet) 
+        { 
+            
         }
     }
 }

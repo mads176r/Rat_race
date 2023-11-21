@@ -6,9 +6,8 @@
         private int _position;
         public int Position {get;set; }
 
-        public static void ResetRat()
+        public void ResetRat()
         {
-
             return;
         }
 

@@ -10,6 +10,6 @@ namespace Rat_race
     {
         public string Name;
         public int Money;
-        public List<Bet>; // lav liste senere
+        public List<Bet> Bets; // lav liste senere
     }
 }
