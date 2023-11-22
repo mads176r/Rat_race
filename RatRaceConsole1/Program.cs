@@ -46,6 +46,8 @@ namespace RatRaceConsole1
 
                     player = racemanager.CreatePlayer(newUserName, newPassword);
                     ratRaceRepository.Save(racemanager.PlayerList);
+
+                    break;
                 }
                 else
                 {
