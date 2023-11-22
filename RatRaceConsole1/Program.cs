@@ -8,10 +8,18 @@ namespace RatRaceConsole1
         static void Main(string[] args)
         {
             RaceManager manager = new RaceManager();
-
             RatRaceRepository ratRaceRepository = new RatRaceRepository();
-            ratRaceRepository.Load();
+            Track track = new Track();
 
+
+            //track = manager.CreateTrack("TestTrack",25);
+
+            //manager.Tracks.Add(track);
+            //ratRaceRepository.Save(manager.Tracks);
+
+            manager = ratRaceRepository.Load();
+
+            Console.WriteLine(manager.Tracks);
 
         }
 

@@ -5,6 +5,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace Rat_race.Repository
 {
@@ -21,37 +22,23 @@ namespace Rat_race.Repository
             WriteIndented = true,
         };
 
-        public bool Save(RaceManager save)
+        public void Save<T>(List<T> save)
         {
-            List<Rat> Rats = save.Rats;
-            string rats = JsonSerializer.Serialize(Rats, _options);
+            string type = typeof(T).Name;
+            string json = JsonConvert.SerializeObject(save);
 
-            List<Race> Races = save.Races;
-            string races = JsonSerializer.Serialize(Races, _options);
+            File.WriteAllText(String.Format(@"C:\Users\HFGF\source\repos\Rat_race\Rat_race\Repository\Data\{0}.json", type), json);
 
-            List<Player> PlayerList = save.PlayerList;
-            string playerList = JsonSerializer.Serialize(PlayerList, _options);
-
-            List<Track> Tracks = save.Tracks;
-            string tracks = JsonSerializer.Serialize(Tracks, _options);
-
-
-            File.WriteAllText(@"C:\Users\HFGF\source\repos\Rat_race\Rat_race\Repository\Data\rats.json", rats);
-            File.WriteAllText(@"C:\Users\HFGF\source\repos\Rat_race\Rat_race\Repository\Data\races.json", races);
-            File.WriteAllText(@"C:\Users\HFGF\source\repos\Rat_race\Rat_race\Repository\Data\playerList.json", playerList);
-            File.WriteAllText(@"C:\Users\HFGF\source\repos\Rat_race\Rat_race\Repository\Data\tracks.json", tracks);
-
-            return true;
         }
 
         public RaceManager Load()
         {
             RaceManager raceManager = new RaceManager();
-            string trackFile = "\"C:\\Users\\HFGF\\source\\repos\\Rat_race\\Rat_race\\Repository\\Data\\tracks.json";
+            string trackFile = (@"C:\Users\HFGF\source\repos\Rat_race\Rat_race\Repository\Data\Track.json");
             string jsonString = File.ReadAllText(trackFile);
-            Track deTracks = JsonSerializer.Deserialize<Track>(trackFile)!;
-
-            return deTracks;
+            List<Track> tracks = JsonConvert.DeserializeObject<List<Track>>(jsonString);
+            raceManager.Tracks = tracks;
+            return raceManager;
         }
-    }    
+    }
 }

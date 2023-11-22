@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using Rat_race.Repository;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,25 +10,37 @@ namespace Rat_race
 {
     public class RaceManager
     {
-        internal List<Track> Tracks; //Der skal ikke "s" på typen som der bliver vist i vejledningen 
-        internal List<Player> PlayerList;
-        internal List<Race> Races;
-        internal List<Rat> Rats;
+        public List<Track> Tracks = new List<Track>(); //Der skal ikke "s" på typen som der bliver vist i vejledningen 
+        internal List<Player> PlayerList = new List<Player>();
+        internal List<Race> Races = new List<Race>();
+        internal List<Rat> Rats = new List<Rat>();
 
 
-        //public Race CreateRace(int raceID, List<Rat> rats, Track track)
-        //{
-        //    Console.WriteLine("ikke færdig");
+        public Race CreateRace(int raceID, List<Rat> rats, Track track)
+        {
+            Race race = new Race();
+            race.RaceID = raceID;
+            race.Rats = rats;
+            race.RaceTrack = track;
 
-        //    return null;
-        //}
+            Races.Add(race);
 
-        //public Track CreateTrack(string name, int trackLength) //public Track skal være med stort "T", vejledningen siger lille
-        //{
-        //    Console.WriteLine("ikke færdig");
+            return race;
+        }
 
-        //    return null;
-        //}
+        public Track CreateTrack(string name, int trackLength) //public track skal være med stort "t", vejledningen siger lille
+        {
+            Track track = new Track();
+
+            track.Name = name;
+            track.TrackLength = trackLength;
+
+            Console.WriteLine(track.Name + " " + track.TrackLength + " " + track);
+
+            Tracks.Add(track);
+
+            return track;
+        }
 
         //public void ConductRace(Race race)
         //{
@@ -45,6 +59,8 @@ namespace Rat_race
             Rat rat = new Rat();
             rat.Name = name;
             rat.Position = 0;
+
+            Rats.Add(rat);
 
             return rat;
         }
@@ -86,5 +102,8 @@ namespace Rat_race
             }
             return null;
         }
+
+
+
     }
 }
