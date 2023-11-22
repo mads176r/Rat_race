@@ -9,7 +9,7 @@ namespace RatRaceConsole1
         {
             RaceManager manager = new RaceManager();
             RatRaceRepository ratRaceRepository = new RatRaceRepository();
-            manager = ratRaceRepository.Load();
+            //manager = ratRaceRepository.Load();
 
             foreach (var item in manager.Tracks)
             {
@@ -27,9 +27,33 @@ namespace RatRaceConsole1
             //Stage 
 
             RaceManager racemanager = new RaceManager();
-            //load jsonfiler med bruger info ind i appen
+            
+            Console.Write("Do you have an account (Y:N)");
+            string hasUser = Console.ReadLine();
+            while (true) 
+            {
+                if (hasUser == "y")
+                {
+                    break;
+                }
+                else if (hasUser == "n")
+                {
+                    Player player = new Player();
+                    Console.Write("Enter Username: ");
+                    string newUserName = Console.ReadLine();
+                    Console.Write("Enter Password: ");
+                    string newPassword = Console.ReadLine();
 
+                    player = racemanager.CreatePlayer(newUserName, newPassword);
+                    ratRaceRepository.Save(racemanager.PlayerList);
+                }
+                else
+                {
+                    Console.WriteLine("Please enter Y(yes) or N(no)");
+                }
+            }
 
+            
             // bruger indtaster login
 
             Console.WriteLine("Insert username");
@@ -85,17 +109,17 @@ namespace RatRaceConsole1
                     Console.Write("Choose a length: ");
                     int trackLength = int.Parse(Console.ReadLine());
 
-                    track = manager.CreateTrack(trackName, trackLength);
-                    ratRaceRepository.Save(manager.Tracks);
+                    track = racemanager.CreateTrack(trackName, trackLength);
+                    ratRaceRepository.Save(racemanager.Tracks);
                     break;
 
                 case 3:
                     Rat rat = new Rat();
                     Console.Write("Give the rat a name: ");
                     string ratName = Console.ReadLine();
-                    rat = manager.CreateRat(ratName);
+                    rat = racemanager.CreateRat(ratName);
 
-                    ratRaceRepository.Save(manager.Rats);
+                    ratRaceRepository.Save(racemanager.Rats);
                     break;
 
                 case 4:

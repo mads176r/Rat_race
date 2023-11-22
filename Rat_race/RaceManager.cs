@@ -11,8 +11,8 @@ namespace Rat_race
     public class RaceManager
     {
         public List<Track> Tracks = new List<Track>(); //Der skal ikke "s" på typen som der bliver vist i vejledningen 
-        internal List<Player> PlayerList = new List<Player>();
-        internal List<Race> Races = new List<Race>();
+        public List<Player> PlayerList = new List<Player>();
+        public List<Race> Races = new List<Race>();
         public List<Rat> Rats = new List<Rat>();
 
 
@@ -65,12 +65,12 @@ namespace Rat_race
             return rat;
         }
 
-        public Player CreatePlayer(string userName, string password, int money)
+        public Player CreatePlayer(string userName, string password)
         {
             Player player = new Player();
             player.UserName = userName;
             player.Password = password;
-            player.Money = money;
+            player.Money = 100; 
 
             PlayerList.Add(player);
 
