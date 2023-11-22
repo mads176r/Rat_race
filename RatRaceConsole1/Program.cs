@@ -9,12 +9,30 @@ namespace RatRaceConsole1
         {
             RaceManager manager = new RaceManager();
             RatRaceRepository ratRaceRepository = new RatRaceRepository();
-            manager = ratRaceRepository.Load();
+            //manager = ratRaceRepository.Load();
 
-            foreach (var item in manager.Tracks)
+            Player player = new Player();
+            string userName = "test";
+            string password = "testKode";
+            int money = 100;
+
+            player = manager.CreatePlayer(userName, password, money);
+            ratRaceRepository.Save(manager.PlayerList);
+
+
+            foreach (var item in manager.PlayerList)
             {
-                Console.WriteLine(item.Name);
+                Console.WriteLine(item.UserName);
             }
+
+
+            Console.WriteLine(manager.Tracks);
+
+
+            //foreach (var item in manager.Tracks)
+            //{
+            //    Console.WriteLine(item.Name);
+            //}
 
 
             Console.WriteLine(manager.Tracks);
@@ -38,7 +56,7 @@ namespace RatRaceConsole1
 
             Console.WriteLine("Indtast password");
 
-            string password = Console.ReadLine();
+            //string password = Console.ReadLine();
 
             // Test om password eksisterer i JSON FILER
             while (racemanager.LoginToPlayer(username, password) == null)

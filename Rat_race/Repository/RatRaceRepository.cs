@@ -51,7 +51,7 @@ namespace Rat_race.Repository
             List<Race> races = JsonConvert.DeserializeObject<List<Race>>(jsonStringRace);
 
 
-            string ratFile = (@"C:\Users\HFGF\source\repos\Rat_race\Rat_race\Repository\Data\Rats.json");
+            string ratFile = (@"C:\Users\HFGF\source\repos\Rat_race\Rat_race\Repository\Data\Rat.json");
             string jsonStringrat = File.ReadAllText(ratFile);
             List<Rat> rats = JsonConvert.DeserializeObject<List<Rat>>(jsonStringrat);
 

@@ -11,10 +11,9 @@ namespace Rat_race
     public class RaceManager
     {
         public List<Track> Tracks = new List<Track>(); //Der skal ikke "s" på typen som der bliver vist i vejledningen 
-        internal List<Player> PlayerList = new List<Player>();
-        internal List<Race> Races = new List<Race>();
+        public List<Player> PlayerList = new List<Player>();
+        public List<Race> Races = new List<Race>();
         public List<Rat> Rats = new List<Rat>();
-
 
         public Race CreateRace(int raceID, List<Rat> rats, Track track)
         {
