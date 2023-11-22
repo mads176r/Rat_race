@@ -64,7 +64,7 @@ namespace RatRaceConsole1
             switch(choice)
             {
                 case 1:
-
+                    Console.WriteLine("Her placere du dit bet");
                     break;
 
                 case 2:
