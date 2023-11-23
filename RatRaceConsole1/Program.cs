@@ -64,7 +64,7 @@ namespace RatRaceConsole1
 
             Console.WriteLine("Insert password");
 
-            
+            Console.WriteLine("Mads er neger");
 
             string password = Console.ReadLine();
 
@@ -77,7 +77,6 @@ namespace RatRaceConsole1
                 Console.Write("Password: ");
                 password = Console.ReadLine();
             }
-
 
             Console.WriteLine("Welcome choose an option and press enter afterwards");
             Console.WriteLine("1: Place Bet");
