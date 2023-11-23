@@ -9,7 +9,7 @@ namespace Rat_race
     public class BookMaker //Fejl i navnet på vejledningen
     {
 
-        public List<Bet> Bets;
+        public List<Bet> Bets = new List<Bet>();
 
 
         public Bet? PlaceBet(Race race, Rat rat, Player player, int money)
@@ -17,7 +17,7 @@ namespace Rat_race
             Bet bet = new Bet();
 
             if (player.Money >= money)
-            {
+            { 
                 bet.Money = money;
                 bet.Race = race;
                 bet.Player = player;

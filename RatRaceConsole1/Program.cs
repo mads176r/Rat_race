@@ -19,21 +19,6 @@ namespace RatRaceConsole1
             //    Console.WriteLine(item.Name);
             //}
 
-            Rat rat_1 = manager.CreateRat("nummer_1");
-            manager.CreateRat("nummer_2");
-            manager.CreateRat("nummer_3");
-            manager.CreateRat("nummer_4");
-
-            Track track = manager.CreateTrack("test", 50);
-
-            Race race = manager.CreateRace(1, manager.Rats, track);
-
-            Player player = manager.CreatePlayer("test", "test", 100);
-
-            Bet bet = bookMaker.PlaceBet(race, rat_1, player, 50);
-
-
-
 
             RaceManager racemanager = new RaceManager();
             
@@ -112,13 +97,20 @@ namespace RatRaceConsole1
                     int betChoice = int.Parse(Console.ReadLine());
                     if (betChoice >= 1 && betChoice <= 6)
                     {
-                        Rat selectedRat = racemanager.Rats[betChoice - 1];
 
-                        Console.WriteLine("You chose " +selectedRat.Name + " as your rat.");
+                        Rat rat_1 = manager.CreateRat("nummer_1");
+                        manager.CreateRat("nummer_2");
+                        manager.CreateRat("nummer_3");
+                        manager.CreateRat("nummer_4");
 
-                        Console.Write("Enter the bet amount: ");
-                        int betAmount = int.Parse(Console.ReadLine());
-                        Console.WriteLine("You bet + " + betAmount + " on " + selectedRat.Name);
+                        Track track_test = manager.CreateTrack("test", 50);
+
+                        Race race = manager.CreateRace(1, manager.Rats, track_test);
+
+                        Player player_test = manager.CreatePlayer("test", "test");
+
+                        Bet bet = bookMaker.PlaceBet(race, rat_1, player_test, 50);
+
                     }
                     else
                     {
