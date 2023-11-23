@@ -8,9 +8,10 @@ namespace RatRaceConsole1
     {
         static void Main(string[] args)
         {
-            //RaceManager manager = new RaceManager();
+            RaceManager manager = new RaceManager();
+            BookMaker bookMaker = new BookMaker();
             RatRaceRepository ratRaceRepository = new RatRaceRepository();
-            ////manager = ratRaceRepository.Load();
+            //manager = ratRaceRepository.Load();
 
 
             //foreach (var item in manager.Tracks)
@@ -23,13 +24,14 @@ namespace RatRaceConsole1
             manager.CreateRat("nummer_3");
             manager.CreateRat("nummer_4");
 
-            //Console.WriteLine(manager.Tracks);
+            Track track = manager.CreateTrack("test", 50);
 
             Race race = manager.CreateRace(1, manager.Rats, track);
 
             Player player = manager.CreatePlayer("test", "test", 100);
 
-            ////Vi arbejder herfra
+            Bet bet = bookMaker.PlaceBet(race, rat_1, player, 50);
+
 
 
 
@@ -73,6 +75,7 @@ namespace RatRaceConsole1
 
             Console.WriteLine("Insert password");
 
+            string password = Console.ReadLine();
 
             while (racemanager.LoginToPlayer(username, password) == null)
             {
