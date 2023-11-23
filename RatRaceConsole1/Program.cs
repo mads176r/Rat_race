@@ -115,42 +115,48 @@ namespace RatRaceConsole1
 
 
                 case 2:
-                    Console.WriteLine("What do you want to create");
-                    Console.WriteLine("1: Create track");
-                    Console.WriteLine("2: Create rat");
-                    Console.WriteLine("3: Create race");
-                    Console.WriteLine("4: Go back");
+                    bool CreateSwitch = true;
+                     while (CreateSwitch) 
+                    {
+                        Console.WriteLine("What do you want to create");
+                        Console.WriteLine("1: Create track");
+                        Console.WriteLine("2: Create rat");
+                        Console.WriteLine("3: Create race");
+                        Console.WriteLine("4: Go back");
 
-                    int createChoice = int.Parse(Console.ReadLine()); 
+                        int createChoice = int.Parse(Console.ReadLine());
 
-                    switch(createChoice) 
-                    { 
-                        case 1:
-                            Track track = new Track();
 
-                            Console.Write("Give the track a name: ");
-                            string trackName = Console.ReadLine();
-                            Console.Write("Choose a length: ");
-                            int trackLength = int.Parse(Console.ReadLine());
+                        switch (createChoice)
+                        {
+                            case 1:
+                                Track track = new Track();
 
-                            track = racemanager.CreateTrack(trackName, trackLength);
-                            ratRaceRepository.Save(racemanager.Tracks);
-                            break;
+                                Console.Write("Give the track a name: ");
+                                string trackName = Console.ReadLine();
+                                Console.Write("Choose a length: ");
+                                int trackLength = int.Parse(Console.ReadLine());
 
-                        case 2:
-                            Rat rat = new Rat();
-                            Console.Write("Give the rat a name: ");
-                            string ratName = Console.ReadLine();
-                            rat = racemanager.CreateRat(ratName);
+                                track = racemanager.CreateTrack(trackName, trackLength);
+                                ratRaceRepository.Save(racemanager.Tracks);
+                                break;
 
-                            ratRaceRepository.Save(racemanager.Rats);
-                            break;
+                            case 2:
+                                Rat rat = new Rat();
+                                Console.Write("Give the rat a name: ");
+                                string ratName = Console.ReadLine();
+                                rat = racemanager.CreateRat(ratName);
 
-                        case 3: //Create race
-                            break;
+                                ratRaceRepository.Save(racemanager.Rats);
+                                break;
 
-                        case 4:
-                            break;
+                            case 3: //Create race
+                                break;
+
+                            case 4:
+                                break;
+                        }
+                    
                     }
                     break;
 
