@@ -80,9 +80,8 @@ namespace RatRaceConsole1
             Console.WriteLine("Welcome choose an option and press enter afterwards");
             Console.WriteLine("1: Place Bet"); 
             Console.WriteLine("2: Create");  
-            Console.WriteLine("3: Create Rat"); 
-            Console.WriteLine("4: Start Game");
-            Console.WriteLine("5: End Game");
+            Console.WriteLine("3: Start Game");
+            Console.WriteLine("4: End Game");
 
 
             int choice = int.Parse(Console.ReadLine());
@@ -95,8 +94,8 @@ namespace RatRaceConsole1
                     Console.WriteLine("1 " + racemanager.Rats[0]);
                     Console.WriteLine("2 " + racemanager.Rats[1]);
                     Console.WriteLine("3 " + racemanager.Rats[2]);
-                    Console.WriteLine("4"  + racemanager.Rats[3]);
-                    Console.WriteLine("5"  + racemanager.Rats[4]);
+                    Console.WriteLine("4 "  + racemanager.Rats[3]);
+                    Console.WriteLine("5 "  + racemanager.Rats[4]);
                     Console.WriteLine("6 " + racemanager.Rats[5]);
 
                     int betChoice = int.Parse(Console.ReadLine());
@@ -117,8 +116,9 @@ namespace RatRaceConsole1
 
 
                 case 2:
-                    bool CreateSwitch = true;
-                     while (CreateSwitch) 
+                    bool createSwitch = true;
+
+                    while (createSwitch) 
                     {
                         Console.WriteLine("What do you want to create");
                         Console.WriteLine("1: Create track");
@@ -152,10 +152,50 @@ namespace RatRaceConsole1
                                 ratRaceRepository.Save(racemanager.Rats);
                                 break;
 
-                            case 3: //Create race
+                            case 3:
+                                Console.WriteLine("Choose your rats:");
+                                for (int i = 0; i < racemanager.Rats.Count; i++)
+                                {
+                                    Console.WriteLine($"{i + 1} {racemanager.Rats[i]}");
+                                }
+
+                                Console.WriteLine("Enter the numbers of the rats you want to choose (comma-separated):");
+                                string input = Console.ReadLine();
+
+                                string[] choices = input.Split(',');
+
+                                List<int> selectedRats = new List<int>();
+
+                                foreach (string i in choices)
+                                {
+                                    if (int.TryParse(i, out int ratChoice) && ratChoice >= 1 && ratChoice <= racemanager.Rats.Count)
+                                    {
+                                        selectedRats.Add(ratChoice);
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine($"Invalid choice: {i}");
+                                    }
+                                }
+
+                                Console.WriteLine("You have chosen the following rats:");
+                                foreach (int ratChoice in selectedRats)
+                                {
+                                    Console.WriteLine($"{ratChoice} {racemanager.Rats[ratChoice - 1]}");
+                                }
+
+                                Console.WriteLine("Choose your track");
+                                for (int i = 0; i < racemanager.Tracks.Count; i++)
+                                {
+                                    Console.WriteLine($"{i + 1} {racemanager.Rats[i]}");
+                                }
+                                string selectedTrack = Console.ReadLine();
+
+
                                 break;
 
                             case 4:
+                                createSwitch = false;
                                 break;
                         }
                     
@@ -164,16 +204,12 @@ namespace RatRaceConsole1
 
 
                 case 3:
+                    Console.WriteLine("The game starts!");
                     break;
 
                 case 4:
-                    Console.WriteLine("The game starts!");
-                    
-                    break;
-
-
-                case 5:
                     Environment.Exit(0); // Lukker console applikationen
+
                     break;
 
             }
