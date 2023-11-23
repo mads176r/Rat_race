@@ -64,6 +64,8 @@ namespace RatRaceConsole1
 
             Console.WriteLine("Insert password");
 
+            Console.WriteLine("Mads er neger");
+
             string password = Console.ReadLine();
 
             // Test om password eksisterer i JSON FILER
