@@ -19,21 +19,6 @@ namespace RatRaceConsole1
             //    Console.WriteLine(item.Name);
             //}
 
-            Rat rat_1 = manager.CreateRat("nummer_1");
-            manager.CreateRat("nummer_2");
-            manager.CreateRat("nummer_3");
-            manager.CreateRat("nummer_4");
-
-            Track track = manager.CreateTrack("test", 50);
-
-            Race race = manager.CreateRace(1, manager.Rats, track);
-
-            Player player = manager.CreatePlayer("test", "test", 100);
-
-            Bet bet = bookMaker.PlaceBet(race, rat_1, player, 50);
-
-
-
 
             RaceManager racemanager = new RaceManager();
             
@@ -54,7 +39,6 @@ namespace RatRaceConsole1
                     string newPassword = Console.ReadLine();
 
                     player = racemanager.CreatePlayer(newUserName, newPassword);
-                    ratRaceRepository.Save(racemanager.PlayerList);
 
                    
 
@@ -151,7 +135,6 @@ namespace RatRaceConsole1
                                 int trackLength = int.Parse(Console.ReadLine());
 
                                 track = racemanager.CreateTrack(trackName, trackLength);
-                                ratRaceRepository.Save(racemanager.Tracks);
                                 break;
 
                             case 2:
@@ -160,7 +143,6 @@ namespace RatRaceConsole1
                                 string ratName = Console.ReadLine();
                                 rat = racemanager.CreateRat(ratName);
 
-                                ratRaceRepository.Save(racemanager.Rats);
                                 break;
 
                             case 3:
