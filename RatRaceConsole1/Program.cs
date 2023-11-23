@@ -12,24 +12,19 @@ namespace RatRaceConsole1
             //manager = ratRaceRepository.Load();
 
 
+            
 
 
-            foreach (var item in manager.PlayerList)
-            {
-                Console.WriteLine(item.UserName);
-            }
 
-
-            Console.WriteLine(manager.Tracks);
-
-
-            //foreach (var item in manager.Tracks)
+            //foreach (var item in manager.PlayerList)
             //{
-            //    Console.WriteLine(item.Name);
+            //    Console.WriteLine(item.UserName);
             //}
 
 
-            Console.WriteLine(manager.Tracks);
+            //Console.WriteLine(manager.Tracks);
+
+
                     
 
 

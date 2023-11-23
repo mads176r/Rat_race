@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Rat_race
 {
-    internal class BookMaker //Fejl i navnet på vejledningen
+    public class BookMaker //Fejl i navnet på vejledningen
     {
 
         public List<Bet> Bets;

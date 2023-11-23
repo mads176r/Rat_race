@@ -26,6 +26,6 @@ namespace Rat_race
         }
 
         public int Money;
-        public List<Bet> Bets; // lav liste senere
+        public List<Bet> Bets;
     }
 }
