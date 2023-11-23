@@ -65,7 +65,7 @@ namespace Rat_race
             return rat;
         }
 
-        public Player CreatePlayer(string userName, string password)
+        public Player CreatePlayer(string userName, string password) //username må ikke kunne gentages
         {
             Player player = new Player();
             player.UserName = userName;
