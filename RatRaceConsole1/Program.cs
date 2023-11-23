@@ -76,7 +76,6 @@ namespace RatRaceConsole1
                 password = Console.ReadLine();
             }
 
-
             Console.WriteLine("Welcome choose an option and press enter afterwards");
             Console.WriteLine("1: Place Bet");
             Console.WriteLine("2: Create Track");
