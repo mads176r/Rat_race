@@ -87,12 +87,7 @@ namespace RatRaceConsole1
 
 
                     Console.WriteLine("choose your rat");
-                    Console.WriteLine("1 " + racemanager.Rats[0]);
-                    Console.WriteLine("2 " + racemanager.Rats[1]);
-                    Console.WriteLine("3 " + racemanager.Rats[2]);
-                    Console.WriteLine("4 "  + racemanager.Rats[3]);
-                    Console.WriteLine("5 "  + racemanager.Rats[4]);
-                    Console.WriteLine("6 " + racemanager.Rats[5]);
+
 
                     int betChoice = int.Parse(Console.ReadLine());
                     if (betChoice >= 1 && betChoice <= 6)
@@ -156,6 +151,11 @@ namespace RatRaceConsole1
                                 break;
 
                             case 3:
+
+                                List<Rat> rats = new List<Rat>();
+                                List<Track> tracks = new List<Track>();
+                                Track raceTrack = new Track();
+
                                 Console.WriteLine("Choose your rats:");
                                 for (int i = 0; i < racemanager.Rats.Count; i++)
                                 {
@@ -173,7 +173,9 @@ namespace RatRaceConsole1
                                 {
                                     if (int.TryParse(i, out int ratChoice) && ratChoice >= 1 && ratChoice <= racemanager.Rats.Count)
                                     {
+                                        rats.Add(racemanager.Rats[int.Parse(i)-1]);
                                         selectedRats.Add(ratChoice);
+
                                     }
                                     else
                                     {
@@ -193,6 +195,38 @@ namespace RatRaceConsole1
                                     Console.WriteLine($"{i + 1} {racemanager.Rats[i]}");
                                 }
                                 string selectedTrack = Console.ReadLine();
+
+                                Console.WriteLine("Enter the numbers of the tracks you want to choose (comma-separated):");
+                                string trackInput = Console.ReadLine();
+
+                                string[] trackChoices = input.Split(',');
+
+                                List<int> selectedTracks = new List<int>();
+
+
+                                foreach (string i in trackChoices)
+                                {
+                                    if (int.TryParse(i, out int trackChoice) && trackChoice >= 1 && trackChoice <= racemanager.Tracks.Count)
+                                    {
+                                        raceTrack = (racemanager.Tracks[int.Parse(i) - 1]);
+                                        selectedTracks.Add(trackChoice);
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine($"Invalid choice: {i}");
+                                    }
+                                }
+
+                                Console.WriteLine("You have chosen the following Tracks:");
+                                foreach (int trackChoice in selectedTracks)
+                                {
+                                    Console.WriteLine($"{trackChoice} {racemanager.Tracks[trackChoice - 1]}");
+                                }
+
+                                int raceIdCount = 0;
+                                int newRaceId = raceIdCount++;
+
+                                racemanager.CreateRace(newRaceId, rats, raceTrack);
 
 
                                 break;
