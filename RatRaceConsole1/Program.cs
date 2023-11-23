@@ -76,7 +76,6 @@ namespace RatRaceConsole1
                 password = Console.ReadLine();
             }
 
-            //Velkommen hvad du gerne lave hva?
 
             Console.WriteLine("Welcome choose an option and press enter afterwards");
             Console.WriteLine("1: Place Bet");
