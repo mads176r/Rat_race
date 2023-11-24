@@ -91,32 +91,38 @@ namespace Rat_race
             return player;
         }
 
-        public Player LoginToPlayer(string userName, string password)
-        {
-            Player player = new Player();
 
-            if (!PlayerList.Any())
+        
+         public Player LoginToPlayer(string userName, string password)
+        {
+            if (PlayerList.Any()) // Check if there are players in the list
             {
                 Player user = PlayerList.FirstOrDefault(u => u.UserName == userName);
-                if (user != null)
+
+            if (user != null)
+            {
+                if (user.Password == password)
                 {
-                    if (user.Password == password)
-                    {
-                        return user;
-                    }
+                    return user; // Return the user if the password matches
                 }
                 else
                 {
-                    Console.WriteLine("Wrong password or username");
+                Console.WriteLine("Wrong password");
                 }
             }
             else
             {
-                Console.WriteLine("No player exist");
+                Console.WriteLine("Wrong username");
             }
-            return null;
+        }
+        else
+        {
+            Console.WriteLine("No players exist");
         }
 
+        return null;
+      }
+        
 
 
     }
