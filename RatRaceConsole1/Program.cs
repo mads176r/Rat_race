@@ -11,6 +11,7 @@ namespace RatRaceConsole1
             RaceManager manager = new RaceManager();
             BookMaker bookMaker = new BookMaker();
             RatRaceRepository ratRaceRepository = new RatRaceRepository();
+            Player player = new Player();
             //manager = ratRaceRepository.Load();
 
 
@@ -31,8 +32,7 @@ namespace RatRaceConsole1
                     break;
                 }
                 else if (hasUser == "n" || hasUser == "N") 
-                {
-                    Player player = new Player();
+                {                    
                     Console.Write("Enter Username: ");
                     string newUserName = Console.ReadLine();
                     Console.Write("Enter Password: ");
@@ -68,6 +68,7 @@ namespace RatRaceConsole1
                 username = Console.ReadLine();
                 Console.Write("Password: ");
                 password = Console.ReadLine();
+                player = racemanager.LoginToPlayer(username, password);
             }
 
             //Velkommen hvad du gerne lave hva?
@@ -83,31 +84,32 @@ namespace RatRaceConsole1
             switch (choice)
             {
                 case 1:
-
-
-                    Console.WriteLine("choose your rat");
-                    Console.WriteLine("1 " + racemanager.Rats[0]);
-                    Console.WriteLine("2 " + racemanager.Rats[1]);
-                    Console.WriteLine("3 " + racemanager.Rats[2]);
-                    Console.WriteLine("4 "  + racemanager.Rats[3]);
-                    Console.WriteLine("5 "  + racemanager.Rats[4]);
-                    Console.WriteLine("6 " + racemanager.Rats[5]);
-
-                    int betChoice = int.Parse(Console.ReadLine());
-                    if (betChoice >= 1 && betChoice <= 6)
+                    for (int raceIndex = 0; raceIndex < racemanager.Races.Count; raceIndex++)
                     {
-                        Rat selectedRat = racemanager.Rats[betChoice - 1];
-
-                        Console.WriteLine("You chose " +selectedRat.Name + " as your rat.");
-
-                        Console.Write("Enter the bet amount: ");
-                        int betAmount = int.Parse(Console.ReadLine());
-                        Console.WriteLine("You bet + " + betAmount + " on " + selectedRat.Name);
+                        Race race = racemanager.Races[raceIndex];
+                        string raceInfo = string.Format("{0}. Track name: {1}. Number of rats: {2}", (raceIndex + 1), race.RaceTrack, race.Rats.Count);
+                        Console.WriteLine(raceInfo);
                     }
-                    else
+                    Console.Write("Choose a race to bet on: ");
+                    int chosenRaceIndex = int.Parse(Console.ReadLine()) - 1;
+                    Race chosenRace = racemanager.Races[chosenRaceIndex];
+
+                    for (int ratIndex = 0; ratIndex < chosenRace.Rats.Count; ratIndex++)
                     {
-                        Console.WriteLine("Please choose a number between 1 and 6.");
-                    } break;
+                        Rat rat = chosenRace.Rats[ratIndex];
+                        string ratInfo = string.Format("{0}. Rat name: {1}", (ratIndex + 1), rat.Name);
+                        Console.WriteLine(ratInfo);
+                    }
+                    Console.Write("Choose a rat to bet on: ");
+                    int chosenRatIndex = int.Parse(Console.ReadLine()) - 1;
+                    Rat chosenRat = chosenRace.Rats[chosenRatIndex];
+
+                    Console.Write("How much money do you wanna bet: ");
+                    int moneyToBet = int.Parse(Console.ReadLine());
+
+                    bookMaker.PlaceBet(chosenRace, chosenRat, player, moneyToBet);
+
+                    break;
 
 
                 case 2:
