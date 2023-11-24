@@ -8,21 +8,12 @@ namespace RatRaceConsole1
     {
         static void Main(string[] args)
         {
-            RaceManager manager = new RaceManager();
-            BookMaker bookMaker = new BookMaker();
             RatRaceRepository ratRaceRepository = new RatRaceRepository();
-            Player player = new Player();
-            //manager = ratRaceRepository.Load();
-
-
-            //foreach (var item in manager.Tracks)
-            //{
-            //    Console.WriteLine(item.Name);
-            //}
-
-
             RaceManager racemanager = new RaceManager();
-            
+            BookMaker bookMaker = new BookMaker();
+            Player player = new Player();
+            //racemanager = ratRaceRepository.Load();
+
             Console.Write("Do you have an account (Y:N)");
             string hasUser = Console.ReadLine();
             while (true) 
@@ -40,8 +31,6 @@ namespace RatRaceConsole1
 
                     player = racemanager.CreatePlayer(newUserName, newPassword);
 
-                   
-
                     break;
                 }
                 else
@@ -53,23 +42,23 @@ namespace RatRaceConsole1
             
             // bruger indtaster login
 
-            Console.WriteLine("Insert username");
+            //Console.WriteLine("Insert username");
 
-            string username = Console.ReadLine();
+            //string username = Console.ReadLine();
 
-            Console.WriteLine("Insert password");
+            //Console.WriteLine("Insert password");
 
-            string password = Console.ReadLine();
+            //string password = Console.ReadLine();
 
-            while (racemanager.LoginToPlayer(username, password) == null)
-            {
-                Console.WriteLine("Try again");
-                Console.Write("Username: ");
-                username = Console.ReadLine();
-                Console.Write("Password: ");
-                password = Console.ReadLine();
-                player = racemanager.LoginToPlayer(username, password);
-            }
+            //while (racemanager.LoginToPlayer(username, password) == null)
+            //{
+            //    Console.WriteLine("Try again");
+            //    Console.Write("Username: ");
+            //    username = Console.ReadLine();
+            //    Console.Write("Password: ");
+            //    password = Console.ReadLine();
+            //    player = racemanager.LoginToPlayer(username, password);
+            //}
 
             //Velkommen hvad du gerne lave hva?
 

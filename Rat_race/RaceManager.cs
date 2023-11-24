@@ -93,9 +93,7 @@ namespace Rat_race
 
         public Player LoginToPlayer(string userName, string password)
         {
-            Player player = new Player();
-
-            if (!PlayerList.Any())
+            if (PlayerList.Count > 0)
             {
                 Player user = PlayerList.FirstOrDefault(u => u.UserName == userName);
                 if (user != null)
