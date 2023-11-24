@@ -62,13 +62,13 @@ namespace RatRaceConsole1
                 username = Console.ReadLine();
                 Console.Write("Password: ");
                 password = Console.ReadLine();
-                player = racemanager.LoginToPlayer(username, password);
+                player = manager.LoginToPlayer(username, password);
             }
 
             // Display options to the user
             Console.WriteLine("Welcome choose an option and press enter afterwards");
-            Console.WriteLine("1: Create");
-            Console.WriteLine("2: Place Bet");
+            Console.WriteLine("1: Place Bet");
+            Console.WriteLine("2: Create");
             Console.WriteLine("3: start Game");
             Console.WriteLine("4: End Game");
 
@@ -77,15 +77,15 @@ namespace RatRaceConsole1
             switch (choice)
             {
                 case 1:
-                    for (int raceIndex = 0; raceIndex < racemanager.Races.Count; raceIndex++)
+                    for (int raceIndex = 0; raceIndex < manager.Races.Count; raceIndex++)
                     {
-                        Race race = racemanager.Races[raceIndex];
+                        Race race = manager.Races[raceIndex];
                         string raceInfo = string.Format("{0}. Track name: {1}. Number of rats: {2}", (raceIndex + 1), race.RaceTrack, race.Rats.Count);
                         Console.WriteLine(raceInfo);
                     }
                     Console.Write("Choose a race to bet on: ");
                     int chosenRaceIndex = int.Parse(Console.ReadLine()) - 1;
-                    Race chosenRace = racemanager.Races[chosenRaceIndex];
+                    Race chosenRace = manager.Races[chosenRaceIndex];
 
                     for (int ratIndex = 0; ratIndex < chosenRace.Rats.Count; ratIndex++)
                     {
@@ -217,67 +217,6 @@ namespace RatRaceConsole1
                                 createSwitch = false;
                                 break;
                         }
-                    }
-                    break;
-
-                case 2:
-                    Console.WriteLine("Place Bet");
-
-                    // Display available rats
-                    Console.WriteLine("Available Rats:");
-                    for (int i = 0; i < manager.Rats.Count; i++)
-                    {
-                        Console.WriteLine($"{i + 1}: {manager.Rats[i].Name}");
-                    }
-
-                    // Get user's rat choice
-                    Console.WriteLine("Choose a rat to bet on:");
-                    int ratChoice2 = int.Parse(Console.ReadLine());
-
-                    if (ratChoice2 >= 1 && ratChoice2 <= manager.Rats.Count)
-                    {
-                        Rat selectedRat = manager.Rats[ratChoice2 - 1];
-                        Console.WriteLine($"You chose: {selectedRat.Name}");
-
-                        // Display available tracks
-                        Console.WriteLine("Available Tracks:");
-                        for (int i = 0; i < manager.Tracks.Count; i++)
-                        {
-                            Console.WriteLine($"{i + 1}: {manager.Tracks[i].Name}");
-                        }
-
-                        // Get user's track choice
-                        Console.WriteLine("Choose a track for the race:");
-                        int trackChoice = int.Parse(Console.ReadLine());
-
-                        if (trackChoice >= 1 && trackChoice <= manager.Tracks.Count)
-                        {
-                            Track selectedTrack = manager.Tracks[trackChoice - 1];
-                            Console.WriteLine($"You chose: {selectedTrack.Name}");
-
-                            // Create rats, track, race, and place bet
-                            Rat selectedRatForBet = manager.CreateRat("Rat_" + ratChoice2);
-                            Track selectedTrackForRace = manager.CreateTrack("Track_" + trackChoice, 50);
-                            Race raceForBet = manager.CreateRace(1, new List<Rat> { selectedRatForBet }, selectedTrackForRace);
-
-                            // Use the player credentials obtained during login
-                            Player playerForBet = manager.LoginToPlayer(username, password);
-
-                            // Place bet
-                            Console.WriteLine("Enter the bet amount:");
-                            int betAmount = int.Parse(Console.ReadLine());
-                            Bet bet = bookMaker.PlaceBet(raceForBet, selectedRatForBet, playerForBet, betAmount);
-
-                            Console.WriteLine($"Bet placed on {selectedRatForBet.Name} in race {raceForBet.RaceID} on track {selectedTrackForRace.Name}.");
-                        }
-                        else
-                        {
-                            Console.WriteLine("Invalid track choice.");
-                        }
-                    }
-                    else
-                    {
-                        Console.WriteLine("Invalid rat choice.");
                     }
                     break;
 
