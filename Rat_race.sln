@@ -7,6 +7,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rat_race", "Rat_race\Rat_ra
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RatRaceConsole1", "RatRaceConsole1\RatRaceConsole1.csproj", "{F6E0C55C-568C-429E-AAC1-41475F8DD7EF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RatRaceWeb", "RatRaceWeb\RatRaceWeb.csproj", "{E8E04471-B746-49B3-8A47-C1BF2C862807}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RatRaceBLL", "RatRaceBLL\RatRaceBLL.csproj", "{D0421E1C-C835-4FF4-BFB2-8FDF5D24D4A3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{F6E0C55C-568C-429E-AAC1-41475F8DD7EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F6E0C55C-568C-429E-AAC1-41475F8DD7EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F6E0C55C-568C-429E-AAC1-41475F8DD7EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E8E04471-B746-49B3-8A47-C1BF2C862807}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8E04471-B746-49B3-8A47-C1BF2C862807}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8E04471-B746-49B3-8A47-C1BF2C862807}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8E04471-B746-49B3-8A47-C1BF2C862807}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0421E1C-C835-4FF4-BFB2-8FDF5D24D4A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0421E1C-C835-4FF4-BFB2-8FDF5D24D4A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0421E1C-C835-4FF4-BFB2-8FDF5D24D4A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0421E1C-C835-4FF4-BFB2-8FDF5D24D4A3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
