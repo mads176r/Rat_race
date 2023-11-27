@@ -48,10 +48,16 @@ namespace Rat_race
             return track;
         }
 
-        //public void ConductRace(Race race)
-        //{
-
-        //}
+        public void ConductRace(Race race)
+        {
+            if (Races.Count == 0)
+            {
+                for (int i = 0; i < Races.Count; i++)
+                {
+                    Race currentRace = Races[i];
+                }
+            }
+        }
 
         public string ViewRaceLog(Race race) //Der skal ikke stå RaceRepport, da det hedder log andre steder
         {

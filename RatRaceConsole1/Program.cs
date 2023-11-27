@@ -179,7 +179,7 @@ namespace RatRaceConsole1
                                 Console.WriteLine("Choose your track");
                                 for (int i = 0; i < manager.Tracks.Count; i++)
                                 {
-                                    Console.WriteLine($"{i + 1} {manager.Rats[i]}");
+                                    Console.WriteLine($"{i + 1} {manager.Tracks[i]}");
                                 }
                                 string selectedTrack = Console.ReadLine();
                                 Console.WriteLine("Enter the numbers of the tracks you want to choose (comma-separated):");
