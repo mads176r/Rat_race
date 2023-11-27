@@ -1,40 +1,37 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace RatRaceWPF
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
-    public partial class MainWindow : Window
+    public partial class MakeBetMenu : Window
     {
-        public MainWindow()
+        private MainWindow mainWindow;
+
+        public MakeBetMenu(MainWindow window)
         {
-            //InitializeComponent();
+            mainWindow = window ?? throw new ArgumentNullException(nameof(window));
+            InitializeComponent();  // Add this line to initialize the XAML elements
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e) // Dette laver sådan at den åbner en ny side. hvor man kan bette. Men lige nu gør den det samme for dem alle. Det ændrer jeg senere
+        private void PlaceBet_Click(object sender, RoutedEventArgs e)
         {
-
-            new MakeBetMenu(this).Show();
-            this.Hide();
+            // Get the bet amount from the TextBox
+            if (int.TryParse(txtBetAmount.Text, out int betAmount))
+            {
+                // Perform actions with the bet amount
+                MessageBox.Show($"You placed a bet of {betAmount}!");
+            }
+            else
+            {
+                MessageBox.Show("Invalid bet amount. Please enter a valid number.");
+            }
         }
 
-        private void Window_DpiChanged(object sender, DpiChangedEventArgs e)
+        private void BackToMainWindow_Click(object sender, RoutedEventArgs e)
         {
-
+            mainWindow.Show();
+            Close();
         }
     }
 }

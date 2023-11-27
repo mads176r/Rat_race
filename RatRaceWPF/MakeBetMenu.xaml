@@ -5,8 +5,26 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RatRaceWPF"
         mc:Ignorable="d"
-        Title="MakeBetMenu" Height="450" Width="800">
+        Title="MakeBetMenu" Height="500" Width="500">
     <Grid>
-        <Button Click="Button_Click">Her kan du bette på følgende rotter!</Button>
+        <Label Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Place your bets!" FontSize="25"/>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100" />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <!-- Add a TextBox for entering the bet amount -->
+        <TextBox x:Name="txtBetAmount" Grid.Row="1" Grid.Column="0" Margin="10" PlaceholderText="Enter bet amount" VerticalAlignment="Center" HorizontalAlignment="Left" Width="150"/>
+
+        <!-- Add a Button to confirm the bet -->
+        <Button Grid.Row="1" Grid.Column="1" Content="Place Bet" Click="PlaceBet_Click" Margin="10" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+
     </Grid>
+    
 </Window>
