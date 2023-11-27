@@ -1,5 +1,4 @@
 ﻿using Newtonsoft.Json;
-using Rat_race.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,11 +13,20 @@ namespace Rat_race
         public List<Player> PlayerList = new List<Player>();
         public List<Race> Races = new List<Race>();
         public List<Rat> Rats = new List<Rat>();
+        public BookMaker BookMaker { get; set; }
+        private IRepository repo;
+        public RaceManager(IRepository repos)
+        {
+            repo = repos;
+            BookMaker = new BookMaker();
+
+
+        }
+
 
         public Race CreateRace(int raceID, List<Rat> rats, Track track)
         {
             Race race = new Race();
-            RatRaceRepository ratRaceRepository = new RatRaceRepository();
 
             race.RaceID = raceID;
             race.Rats = rats;
@@ -26,7 +34,7 @@ namespace Rat_race
 
             Races.Add(race);
 
-            ratRaceRepository.Save(Races);
+            repo.Save(Races);
 
             return race;
         }
@@ -34,7 +42,6 @@ namespace Rat_race
         public Track CreateTrack(string name, int trackLength) //public track skal være med stort "t", vejledningen siger lille
         {
             Track track = new Track();
-            RatRaceRepository ratRaceRepository = new RatRaceRepository();
 
             track.Name = name;
             track.TrackLength = trackLength;
@@ -43,7 +50,7 @@ namespace Rat_race
 
             Tracks.Add(track);
 
-            ratRaceRepository.Save(Tracks);
+            repo.Save(Tracks);
 
             return track;
         }
@@ -63,14 +70,15 @@ namespace Rat_race
         public Rat CreateRat(string name)
         {
             Rat rat = new Rat();
-            RatRaceRepository ratRaceRepository = new RatRaceRepository();
+            // RatRaceRepository ratRaceRepository = new RatRaceRepository();
+
 
             rat.Name = name;
             rat.Position = 0;
 
             Rats.Add(rat);
 
-            ratRaceRepository.Save(Rats);
+            repo.Save(Rats);
 
             return rat;
         }
@@ -78,15 +86,14 @@ namespace Rat_race
         public Player CreatePlayer(string userName, string password) //username må ikke kunne gentages
         {
             Player player = new Player();
-            RatRaceRepository ratRaceRepository = new RatRaceRepository();
 
             player.UserName = userName;
             player.Password = password;
-            player.Money = 100; 
+            player.Money = 100;
 
             PlayerList.Add(player);
 
-            ratRaceRepository.Save(PlayerList);
+            repo.Save(PlayerList);
 
             return player;
         }

@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RatRaceConsole1", "RatRaceC
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RatRaceWPF2", "RatRaceWPF2\RatRaceWPF2.csproj", "{11F579FD-DD5F-4BD4-BEA3-4601CC69D949}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RatRaceBLL", "RatRaceBLL\RatRaceBLL.csproj", "{D5C7C99E-67C9-4B4E-9C9F-16038CB65589}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{11F579FD-DD5F-4BD4-BEA3-4601CC69D949}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{11F579FD-DD5F-4BD4-BEA3-4601CC69D949}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{11F579FD-DD5F-4BD4-BEA3-4601CC69D949}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5C7C99E-67C9-4B4E-9C9F-16038CB65589}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5C7C99E-67C9-4B4E-9C9F-16038CB65589}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5C7C99E-67C9-4B4E-9C9F-16038CB65589}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5C7C99E-67C9-4B4E-9C9F-16038CB65589}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

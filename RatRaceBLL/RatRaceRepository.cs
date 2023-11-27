@@ -1,17 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Text.Json;
-using System.Threading.Tasks;
+﻿using System.Text.Json;
 using Newtonsoft.Json;
 
-namespace Rat_race.Repository
+using Rat_race;
+namespace RatRaceBLL
 {
-    public class RatRaceRepository
+    public class RatRaceRepository : IRepository
     {
-        public RatRaceRepository() 
+        public RatRaceRepository()
         {
 
         }
@@ -31,11 +26,10 @@ namespace Rat_race.Repository
 
         }
 
-        public RaceManager Load()
+        public RaceManager Load(RaceManager race)
         {
-            RaceManager raceManager = new RaceManager();
 
-
+            RaceManager raceManager = race;
             string trackFile = (@"C:\Users\HFGF\source\repos\Rat_race\Rat_race\Repository\Data\Track.json");
             string jsonStringTrack = File.ReadAllText(trackFile);
             List<Track> tracks = JsonConvert.DeserializeObject<List<Track>>(jsonStringTrack);
