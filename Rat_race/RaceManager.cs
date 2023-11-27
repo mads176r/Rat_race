@@ -18,11 +18,15 @@ namespace Rat_race
         public Race CreateRace(int raceID, List<Rat> rats, Track track)
         {
             Race race = new Race();
+            RatRaceRepository ratRaceRepository = new RatRaceRepository();
+
             race.RaceID = raceID;
             race.Rats = rats;
             race.RaceTrack = track;
 
             Races.Add(race);
+
+            ratRaceRepository.Save(Races);
 
             return race;
         }
@@ -30,6 +34,7 @@ namespace Rat_race
         public Track CreateTrack(string name, int trackLength) //public track skal være med stort "t", vejledningen siger lille
         {
             Track track = new Track();
+            RatRaceRepository ratRaceRepository = new RatRaceRepository();
 
             track.Name = name;
             track.TrackLength = trackLength;
@@ -37,6 +42,8 @@ namespace Rat_race
             Console.WriteLine(track.Name + " " + track.TrackLength + " " + track);
 
             Tracks.Add(track);
+
+            ratRaceRepository.Save(Tracks);
 
             return track;
         }
@@ -56,31 +63,37 @@ namespace Rat_race
         public Rat CreateRat(string name)
         {
             Rat rat = new Rat();
+            RatRaceRepository ratRaceRepository = new RatRaceRepository();
+
             rat.Name = name;
             rat.Position = 0;
 
             Rats.Add(rat);
 
+            ratRaceRepository.Save(Rats);
+
             return rat;
         }
 
-        public Player CreatePlayer(string userName, string password, int money)
+        public Player CreatePlayer(string userName, string password) //username må ikke kunne gentages
         {
             Player player = new Player();
+            RatRaceRepository ratRaceRepository = new RatRaceRepository();
+
             player.UserName = userName;
             player.Password = password;
-            player.Money = money;
+            player.Money = 100; 
 
             PlayerList.Add(player);
+
+            ratRaceRepository.Save(PlayerList);
 
             return player;
         }
 
         public Player LoginToPlayer(string userName, string password)
         {
-            Player player = new Player();
-
-            if (!PlayerList.Any())
+            if (PlayerList.Count > 0)
             {
                 Player user = PlayerList.FirstOrDefault(u => u.UserName == userName);
                 if (user != null)
