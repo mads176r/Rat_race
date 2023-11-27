@@ -1,0 +1,61 @@
+﻿<Window x:Class="RatRaceWPF2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RatRaceWPF2" 
+        mc:Ignorable="d"
+        Title="RatRace" Height="500" Width="500">
+
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80" ></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+
+        <Label Grid.ColumnSpan="3" HorizontalAlignment="Center"
+               VerticalAlignment="Center" Content="Hello! Welcome to RatRace!&#xA;You now have these choices: " FontSize="25"/>
+
+        <Button
+            Grid.Row="1" Grid.Column="0"
+            Content="1: Place a bet" Click="GoToBetMaking"
+            />
+        <Button 
+            Grid.Row="1" Grid.Column="1"
+            Content="2: Start Race"
+            />
+        <Button 
+            Grid.Row="1" Grid.Column="2" 
+            Content="3: Create"
+            />
+        <Button 
+            Grid.Row="2" Grid.Column="0" 
+            Content="4: empty"
+            />
+        <Button 
+            Grid.Row="2" Grid.Column="1" 
+            Content="5: View Logs"
+            />
+        <Button 
+            Grid.Row="2" Grid.Column="2"
+            Content="6: Leave the game"
+            />
+        <!--<Image Grid.RowSpan="3" Margin="-62,9,-49,10" Source="C:\Users\HFGF\source\repos\mads176r\Rat_race\RatRaceWPF\Images\1_JEOzXCiuayCsgPqKullnSA.jpg" Grid.ColumnSpan="3"/>-->
+        <!--<TextBlock Grid.Column="2" HorizontalAlignment="Center" Height="21" Margin="0,80,0,0" Grid.Row="2" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="54"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Height="21" Margin="49,78,0,0" Grid.Row="2" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="54"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Height="21" Margin="49,101,0,0" Grid.Row="1" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="54"/>
+        <TextBlock HorizontalAlignment="Left" Height="21" Margin="47,80,0,0" Grid.Row="2" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="54"/>
+        <TextBlock Grid.Column="2" HorizontalAlignment="Center" Height="21" Margin="0,101,0,0" Grid.Row="1" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="54"/>
+        <TextBlock HorizontalAlignment="Left" Height="21" Margin="47,99,0,0" Grid.Row="1" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="54"/>-->
+
+
+    </Grid>
+</Window>

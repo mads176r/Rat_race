@@ -1,9 +1,9 @@
-﻿<Window x:Class="RatRaceWPF.MainWindow"
+﻿<Window x:Class="RatRaceWPF2.MakeBetWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:RatRaceWPF"
+        xmlns:local="clr-namespace:RatRaceWPF2"
         mc:Ignorable="d"
         Title="MakeBetMenu" Height="500" Width="500">
     <Grid>
@@ -21,10 +21,9 @@
         <!--Add a TextBox for entering the bet amount-->
 
         <Label Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Place your bets!" FontSize="25"/>
-        <TextBox HorizontalAlignment="Left" x:Name="txtBetAmount" Margin="10,19,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Grid.Row="1" TextChanged="TextBox_TextChanged"/>
-        <Button Grid.Column="1" Content="Button" HorizontalAlignment="Left" Margin="69,76,0,0" Grid.Row="1" VerticalAlignment="Top" Click="Button_Click_1"/>
+        <TextBox HorizontalAlignment="Left" x:Name="txtBetAmount" Margin="190,10,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Grid.Row="1" TextChanged="TextBox_TextChanged" Grid.ColumnSpan="2"/>
+        <Button Content="Bet" HorizontalAlignment="Left" Margin="239,41,0,0" Grid.Row="1" VerticalAlignment="Top" Click="ConfirmBet" RenderTransformOrigin="-3.205,-1.43" Grid.ColumnSpan="2" />
 
-        <!--<TextBox x:Name="txtBetAmount" Grid.Row="1" Grid.Column="0" Margin="10" PlaceholderText="Enter bet amount" VerticalAlignment="Center" HorizontalAlignment="Left" Width="150"/>-->
 
         <!--Add a Button to confirm the bet 
         <Button Grid.Row="1" Grid.Column="1" Content="Place Bet" Click="PlaceBet_Click" Margin="10" VerticalAlignment="Center" HorizontalAlignment="Left"/>-->
