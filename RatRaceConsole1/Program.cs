@@ -222,8 +222,23 @@ namespace RatRaceConsole1
 
                 case 3:
                     // start the game
-                    Console.WriteLine("game start");
+                    Console.WriteLine("Game started!");
+
+                    if (manager.Races.Count > 0)
+                    {
+                        Race selectedRace = manager.Races[0];
+
+                        manager.ConductRace(selectedRace);
+
+                        string raceLog = manager.ViewRaceLog(selectedRace);
+                        Console.WriteLine(raceLog); 
+                    }
+                    else
+                    {
+                        Console.WriteLine("No available race to conduct");
+                    }
                     break;
+
 
                 case 4:
                     // Exit the console application
