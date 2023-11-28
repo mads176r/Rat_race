@@ -21,8 +21,9 @@ namespace RatRaceBLL
         {
             string type = typeof(T).Name;
             string json = JsonConvert.SerializeObject(save);
+            string filePath = $@"C:\Users\HFGF\source\repos\mads176r\Rat_race\Rat_race\Repository\Data\{type}.json";
 
-            File.WriteAllText(String.Format(@"C:\Users\HFGF\source\repos\Rat_race\Rat_race\Repository\Data\{0}.json", type), json);
+            File.WriteAllText(filePath, json);
 
         }
 
@@ -30,22 +31,22 @@ namespace RatRaceBLL
         {
 
             RaceManager raceManager = race;
-            string trackFile = (@"C:\Users\HFGF\source\repos\Rat_race\Rat_race\Repository\Data\Track.json");
+            string trackFile = ($@"C:\Users\HFGF\source\repos\mads176r\Rat_race\Rat_race\Repository\Data\Track.json");
             string jsonStringTrack = File.ReadAllText(trackFile);
             List<Track> tracks = JsonConvert.DeserializeObject<List<Track>>(jsonStringTrack);
 
 
-            string PlayerListFile = (@"C:\Users\HFGF\source\repos\Rat_race\Rat_race\Repository\Data\Player.json");
+            string PlayerListFile = ($@"C:\Users\HFGF\source\repos\mads176r\Rat_race\Rat_race\Repository\Data\Player.json");
             string jsonStringPlayerList = File.ReadAllText(PlayerListFile);
             List<Player> playerList = JsonConvert.DeserializeObject<List<Player>>(jsonStringPlayerList);
 
 
-            string raceFile = (@"C:\Users\HFGF\source\repos\Rat_race\Rat_race\Repository\Data\Race.json");
+            string raceFile = ($@"C:\Users\HFGF\source\repos\mads176r\Rat_race\Rat_race\Repository\Data\Race.json");
             string jsonStringRace = File.ReadAllText(raceFile);
             List<Race> races = JsonConvert.DeserializeObject<List<Race>>(jsonStringRace);
 
 
-            string ratFile = (@"C:\Users\HFGF\source\repos\Rat_race\Rat_race\Repository\Data\Rat.json");
+            string ratFile = ($@"C:\Users\HFGF\source\repos\mads176r\Rat_race\Rat_race\Repository\Data\Rat.json");
             string jsonStringrat = File.ReadAllText(ratFile);
             List<Rat> rats = JsonConvert.DeserializeObject<List<Rat>>(jsonStringrat);
 

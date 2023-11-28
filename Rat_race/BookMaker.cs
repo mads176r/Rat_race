@@ -10,7 +10,10 @@ namespace Rat_race
     {
 
         public List<Bet> Bets;
-
+        public BookMaker()
+        {
+                
+        }
 
         public Bet? PlaceBet(Race race, Rat rat, Player player, int money)
         {

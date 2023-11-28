@@ -30,11 +30,11 @@
             />
         <Button 
             Grid.Row="1" Grid.Column="1"
-            Content="2: Start Race"
+            Content="2: Start Race" Click="GoToRaceStart"
             />
         <Button 
-            Grid.Row="1" Grid.Column="2" 
-            Content="3: Create"
+            Grid.Row="1" Grid.Column="2"
+            Content="3: Create" Click="CreateThings"
             />
         <Button 
             Grid.Row="2" Grid.Column="0" 
@@ -42,12 +42,15 @@
             />
         <Button 
             Grid.Row="2" Grid.Column="1" 
-            Content="5: View Logs"
+            Content="5: View Logs" Click="LogsView"
             />
+        
         <Button 
             Grid.Row="2" Grid.Column="2"
-            Content="6: Leave the game"
+            Content="6: Leave the game" Click="ExitButtonClick"
             />
+        
+        
         <!--<Image Grid.RowSpan="3" Margin="-62,9,-49,10" Source="C:\Users\HFGF\source\repos\mads176r\Rat_race\RatRaceWPF\Images\1_JEOzXCiuayCsgPqKullnSA.jpg" Grid.ColumnSpan="3"/>-->
         <!--<TextBlock Grid.Column="2" HorizontalAlignment="Center" Height="21" Margin="0,80,0,0" Grid.Row="2" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="54"/>
         <TextBlock Grid.Column="1" HorizontalAlignment="Left" Height="21" Margin="49,78,0,0" Grid.Row="2" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="54"/>

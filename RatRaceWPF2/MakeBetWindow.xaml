@@ -20,9 +20,10 @@
         </Grid.RowDefinitions>
         <!--Add a TextBox for entering the bet amount-->
 
-        <Label Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Place your bets!" FontSize="25"/>
-        <TextBox HorizontalAlignment="Left" x:Name="txtBetAmount" Margin="190,10,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Grid.Row="1" TextChanged="TextBox_TextChanged" Grid.ColumnSpan="2"/>
-        <Button Content="Bet" HorizontalAlignment="Left" Margin="239,41,0,0" Grid.Row="1" VerticalAlignment="Top" Click="ConfirmBet" RenderTransformOrigin="-3.205,-1.43" Grid.ColumnSpan="2" />
+        <Label Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Place your bets!" FontSize="25"  Name="RatNameInputBox"/>
+        <TextBox HorizontalAlignment="Left" x:Name="txtBetAmount" Margin="175,71,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" Grid.Row="1" TextChanged="TextBox_TextChanged" Grid.ColumnSpan="2" Height="25"/>
+        <Button Content="Bet" Width="80" Height="20" HorizontalAlignment="Left" Margin="210,108,0,0" Grid.Row="1" VerticalAlignment="Top" Click="ConfirmBet" RenderTransformOrigin="-3.205,-1.43" Grid.ColumnSpan="2" />
+        <Button Content="Go back" Width="80" Height="20" HorizontalAlignment="Left" Margin="210,162,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="-3.205,-1.43" Grid.ColumnSpan="2" />
 
 
         <!--Add a Button to confirm the bet 

@@ -9,9 +9,9 @@ namespace RatRaceWPF
 
         public MainWindow ()
         {
-          //  mainWindow = window ?? throw new ArgumentNullException(nameof(window));
-         //   InitializeComponent();  // Add this line to initialize the XAML elements
-            //return null; // Make void if it doesnt return anything, change null if return isnt supposed to be null
+            mainWindow = window ?? throw new ArgumentNullException(nameof(window));
+            InitializeComponent(); Add this line to initialize the XAML elements
+            return null; Make void if it doesnt return anything, change null if return isnt supposed to be null
         }
 
         private void PlaceBet_Click(object sender, RoutedEventArgs e)
@@ -26,5 +26,6 @@ namespace RatRaceWPF
             //mainWindow.Show();
             //Close();
         }
+        
     }
 }

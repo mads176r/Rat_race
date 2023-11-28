@@ -15,6 +15,7 @@ namespace Rat_race
         public List<Rat> Rats = new List<Rat>();
         public BookMaker BookMaker { get; set; }
         private IRepository repo;
+        
         public RaceManager(IRepository repos)
         {
             repo = repos;

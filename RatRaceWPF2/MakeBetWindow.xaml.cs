@@ -45,7 +45,7 @@ namespace RatRaceWPF2
 
         //private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         //{
-        //    // Assuming you have a TextBox named txtBetAmount
+        //    
         //    if (sender is TextBox textBox)
         //    {
         //        // You can access the updated text using textBox.Text
