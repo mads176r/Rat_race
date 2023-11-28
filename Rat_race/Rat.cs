@@ -1,4 +1,6 @@
-﻿namespace Rat_race
+﻿using static System.Runtime.InteropServices.JavaScript.JSType;
+
+namespace Rat_race
 {
     public class Rat
     {
@@ -33,9 +35,7 @@
             int move = randomMove.Range(upper, lower);
 
             int newPosition = _position + move;
-
             return newPosition;
         }
     }
-
 }

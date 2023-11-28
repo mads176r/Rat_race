@@ -59,7 +59,7 @@ namespace Rat_race
             }
         }
 
-        public string ViewRaceLog(Race race) //Der skal ikke stå RaceRepport, da det hedder log andre steder
+        public string ViewRaceLog(Race race) //Dera skal ikke stå RaceRepport, da det hedder log andre steder
         {
             Console.WriteLine("ikke færdig");
 
