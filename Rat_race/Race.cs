@@ -57,13 +57,14 @@ namespace Rat_race
                     string infoToLog = rat.Name + " moved " + rat.Position + "\n";
                     logRace(infoToLog);
 
-                    if(rat.Position >= RaceTrack.TrackLength)
+                    if (rat.Position >= RaceTrack.TrackLength)
                     {
                         Winner = rat;
                         string winnerToLog = rat.Name + " Won the race";
+                        break;
                     }
-                    logRace("\n");
                 }
+                logRace("\n");
             }
         }
 

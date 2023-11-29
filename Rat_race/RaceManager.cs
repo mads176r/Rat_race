@@ -55,9 +55,7 @@ namespace Rat_race
 
         public string ViewRaceLog(Race race) //Dera skal ikke stå RaceRepport, da det hedder log andre steder
         {
-            Console.WriteLine("ikke færdig");
-
-            return null;
+            return race.Log;
         }
 
         public Rat CreateRat(string name)
