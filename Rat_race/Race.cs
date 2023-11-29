@@ -1,4 +1,6 @@
-﻿namespace Rat_race
+﻿using System.Diagnostics;
+
+namespace Rat_race
 {
     public class Race
     {
@@ -41,7 +43,29 @@
 
         public void ConductRace()
         {
+            foreach (Rat rat in Rats)
+            {
+                rat.ResetRat();
+            }
 
+            while (Winner == null)
+            {
+                foreach (Rat rat in Rats)
+                {
+                    rat.MoveRat();
+
+                    string infoToLog = rat.Name + " moved " + rat.Position + "\n";
+                    logRace(infoToLog);
+
+                    if (rat.Position >= RaceTrack.TrackLength)
+                    {
+                        Winner = rat;
+                        string winnerToLog = rat.Name + " Won the race";
+                        break;
+                    }
+                }
+                logRace("\n");
+            }
         }
 
         public Rat GetWinner()
@@ -54,9 +78,9 @@
             return _log;
         }
 
-        private void logRace()
+        private void logRace(string infoToLog)
         {
-
+            _log += infoToLog;
         }
 
     }

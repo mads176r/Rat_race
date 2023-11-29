@@ -50,20 +50,12 @@ namespace Rat_race
 
         public void ConductRace(Race race)
         {
-            if (Races.Count == 0)
-            {
-                for (int i = 0; i < Races.Count; i++)
-                {
-                    Race currentRace = Races[i];
-                }
-            }
+            race.ConductRace();
         }
 
         public string ViewRaceLog(Race race) //Dera skal ikke stå RaceRepport, da det hedder log andre steder
         {
-            Console.WriteLine("ikke færdig");
-
-            return null;
+            return race.Log;
         }
 
         public Rat CreateRat(string name)
