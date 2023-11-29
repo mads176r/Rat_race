@@ -10,6 +10,7 @@ namespace RatRaceConsole1
         {
 
             Manager manager = new Manager();
+            
 
             Player player = new Player();
 

@@ -38,9 +38,6 @@ namespace RatRaceWeb
             Manager manager = new Manager();
             RatRaceRepository ratRaceRepository = new RatRaceRepository();
             
-            System.Diagnostics.Debug.WriteLine(ratRaceRepository.Load(manager.RaceManager));
-
-
         }
     }
 }
