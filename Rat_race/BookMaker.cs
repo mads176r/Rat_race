@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Rat_race.Repository;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,7 +13,7 @@ namespace Rat_race
         public List<Bet> Bets = new List<Bet>();
 
 
-        public Bet? PlaceBet(Race race, Rat rat, Player player, int money)
+        public Bet PlaceBet(Race race, Rat rat, Player player, int money)
         {
             Bet bet = new Bet();
 
@@ -26,6 +27,12 @@ namespace Rat_race
 
                 player.Money -= money;
 
+                if(player.Bets == null)
+                {
+                    player.Bets = new List<Bet>();
+                }
+                player.Bets.Add(bet);
+
                 return bet;
             }
             else
@@ -38,7 +45,17 @@ namespace Rat_race
 
         public void PayOutWinnings(Bet bet) 
         {
-            bet.PayWinnings();
+            Rat rat = bet.Race.GetWinner();
+
+            if (bet.Rat.Name == rat.Name)
+            {
+                bet.PayWinnings();
+            }
+            else
+            {
+                Console.WriteLine("You lost: " + bet.Money);
+            }
+            
         }
     }
 }

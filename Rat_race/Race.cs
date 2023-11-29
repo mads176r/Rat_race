@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using Rat_race.Repository;
+using System.Diagnostics;
 
 namespace Rat_race
 {
@@ -59,7 +60,7 @@ namespace Rat_race
 
                     if (rat.Position >= RaceTrack.TrackLength)
                     {
-                        Winner = rat;
+                        _winner = rat;
                         string winnerToLog = "\n" + rat.Name + " Won the race";
                         logRace(winnerToLog);
                         break;

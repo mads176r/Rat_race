@@ -24,6 +24,11 @@ namespace Rat_race
             race.Rats = rats;
             race.RaceTrack = track;
 
+            if (Races == null)
+            {
+                Races = new List<Race>();
+            }
+
             Races.Add(race);
 
             ratRaceRepository.Save(Races);
@@ -51,6 +56,9 @@ namespace Rat_race
         public void ConductRace(Race race)
         {
             race.ConductRace();
+
+            RatRaceRepository ratRaceRepository = new RatRaceRepository();
+            ratRaceRepository.Save(Races);
         }
 
         public string ViewRaceLog(Race race) //Dera skal ikke stå RaceRepport, da det hedder log andre steder
@@ -80,7 +88,12 @@ namespace Rat_race
 
             player.UserName = userName;
             player.Password = password;
-            player.Money = 100; 
+            player.Money = 100;
+
+            if (PlayerList == null)
+            {
+                PlayerList = new List<Player>();
+            }
 
             PlayerList.Add(player);
 
@@ -90,37 +103,37 @@ namespace Rat_race
         }
 
 
-        
-         public Player LoginToPlayer(string userName, string password)
+
+        public Player LoginToPlayer(string userName, string password)
         {
             if (PlayerList.Any()) // Check if there are players in the list
             {
                 Player user = PlayerList.FirstOrDefault(u => u.UserName == userName);
 
-            if (user != null)
-            {
-                if (user.Password == password)
+                if (user != null)
                 {
-                    return user; // Return the user if the password matches
+                    if (user.Password == password)
+                    {
+                        return user; // Return the user if the password matches
+                    }
+                    else
+                    {
+                        Console.WriteLine("Wrong password");
+                    }
                 }
                 else
                 {
-                Console.WriteLine("Wrong password");
+                    Console.WriteLine("Wrong username");
                 }
             }
             else
             {
-                Console.WriteLine("Wrong username");
+                Console.WriteLine("No players exist");
             }
-        }
-        else
-        {
-            Console.WriteLine("No players exist");
+
+            return null;
         }
 
-        return null;
-      }
-        
 
 
     }

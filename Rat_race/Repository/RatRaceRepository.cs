@@ -25,7 +25,11 @@ namespace Rat_race.Repository
         public void Save<T>(List<T> save)
         {
             string type = typeof(T).Name;
-            string json = JsonConvert.SerializeObject(save);
+            //string json = JsonConvert.SerializeObject(save);
+            string json = JsonConvert.SerializeObject(save, new JsonSerializerSettings
+            {
+                ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+            });
 
             File.WriteAllText(String.Format(@"C:\Users\HFGF\source\repos\Rat_race\Repository\Data\{0}.json", type), json);
 
