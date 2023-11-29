@@ -60,7 +60,8 @@ namespace Rat_race
                     if (rat.Position >= RaceTrack.TrackLength)
                     {
                         Winner = rat;
-                        string winnerToLog = rat.Name + " Won the race";
+                        string winnerToLog = "\n" + rat.Name + " Won the race";
+                        logRace(winnerToLog);
                         break;
                     }
                 }

@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace Rat_race
 {
-    internal class RNG
+    internal static class RNG
     {
-        private RNG _rng = new RNG();
+        private static Random _rng = new Random();
 
-        public int Range(int upper, int lower)
+        public static int Range(int lower, int upper)
         {
-            int random = _rng.Range(upper, lower);
+            int random = _rng.Next(lower, upper);
             return random;
 
         }

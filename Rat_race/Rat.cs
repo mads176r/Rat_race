@@ -31,8 +31,7 @@ namespace Rat_race
             int upper = 10;
             int lower = 0;
 
-            RNG randomMove = new RNG();
-            int move = randomMove.Range(upper, lower);
+            int move = RNG.Range(lower, upper);
 
             int newPosition = _position + move;
             _position = newPosition;
