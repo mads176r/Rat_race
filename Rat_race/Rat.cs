@@ -35,7 +35,8 @@ namespace Rat_race
             int move = randomMove.Range(upper, lower);
 
             int newPosition = _position + move;
-            return newPosition;
+            _position = newPosition;
+            return move;
         }
     }
 }
