@@ -153,6 +153,7 @@ namespace RatRaceConsole1
                                     Console.Write("Give the rat a name: ");
                                     string ratName = Console.ReadLine();
                                     rat = manager.CreateRat(ratName);
+                                    manager.Rats.Add(rat);
                                     ratRaceRepository.Save(manager.Rats);
                                     break;
 

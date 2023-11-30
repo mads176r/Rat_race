@@ -5,14 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Data.SqlClient;
 
-namespace Rat_race
+namespace Rat_race.Repository
 {
     public class SqlConnectionManager
     {
         string connectionString;
 
-        public SqlConnectionManager(string dataSource, string initialCatalog, 
-                                    bool integratedSecurity = true,  bool trustServerCertificate = true)
+        public SqlConnectionManager(string dataSource, string initialCatalog,
+                                    bool integratedSecurity = true, bool trustServerCertificate = true)
         {
             SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder
             {
@@ -33,12 +33,12 @@ namespace Rat_race
 
         public void OpenConnection(SqlConnection connection)
         {
-                connection.Open();
+            connection.Open();
         }
 
         public void CloseConnection(SqlConnection connection)
         {
-                connection.Close();
+            connection.Close();
         }
     }
 }
