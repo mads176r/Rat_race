@@ -7,6 +7,9 @@
         mc:Ignorable="d"
         Title="Create" Height="450" Width="800">
     <Grid>
-        
+        <Button Content="Create Rat" x:Name="RatCreationButton" HorizontalAlignment="Left" Margin="89,82,0,0" VerticalAlignment="Top" Click="GoToRatCreationButton"/>
+        <Button Content="Create Race" HorizontalAlignment="Left" Margin="89,127,0,0" VerticalAlignment="Top"/>
+        <Button Content="Conduct Track" HorizontalAlignment="Left" Margin="89,170,0,0" VerticalAlignment="Top"/>
+
     </Grid>
 </Window>

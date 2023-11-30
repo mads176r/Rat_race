@@ -23,5 +23,16 @@ namespace RatRaceWPF2
         {
             InitializeComponent();
         }
+
+        private void GoToRatCreationButton(object sender, RoutedEventArgs e)
+        {
+            CreateRat Window = new CreateRat();
+            Window.Show();
+            this.Hide();
+
+
+        }
+
+      
     }
 }

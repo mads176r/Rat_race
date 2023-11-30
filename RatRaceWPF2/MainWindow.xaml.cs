@@ -25,20 +25,11 @@ namespace RatRaceWPF2
         public MainWindow()
         {
             InitializeComponent();
-            // string RatNameInput = RatNameInputBox.Text;
-
-            manager.RaceManager.CreateRat("Rotte1");
-            manager.RaceManager.CreateTrack("Track", 50);
-            manager.RaceManager.CreatePlayer("cobra", "cobra");
-            
-            // manager.RaceManager.CreateRace(1, manager.RaceManager.Rats, manager.RaceManager.Tracks[0]);
         }
 
 
         private void GoToBetMaking(object sender, RoutedEventArgs e)
         {
-
-
             MakeBetWindow  Window = new MakeBetWindow();
             Window.Show();
             this.Hide();

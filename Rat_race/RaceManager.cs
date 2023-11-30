@@ -71,8 +71,6 @@ namespace Rat_race
         public Rat CreateRat(string name)
         {
             Rat rat = new Rat();
-            // RatRaceRepository ratRaceRepository = new RatRaceRepository();
-
 
             rat.Name = name;
             rat.Position = 0;
