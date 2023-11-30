@@ -31,7 +31,7 @@ namespace RatRaceWPF2
             manager.RaceManager.CreateTrack("Track", 50);
             manager.RaceManager.CreatePlayer("cobra", "cobra");
             
-            manager.RaceManager.CreateRace(1, manager.RaceManager.Rats, manager.RaceManager.Tracks[0]);
+            // manager.RaceManager.CreateRace(1, manager.RaceManager.Rats, manager.RaceManager.Tracks[0]);
         }
 
 

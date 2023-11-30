@@ -24,7 +24,30 @@ namespace RatRaceWPF2
             InitializeComponent();
             
         }
-
+        private void GoToRaceStart(object sender, RoutedEventArgs e)
+        {
+            StartRace Window = new StartRace();
+            Window.Show();
+            this.Hide();
+        }
+        private void GoToLogsView(object sender, RoutedEventArgs e)
+        {
+            ViewLogs Window = new ViewLogs();
+            Window.Show();
+            this.Hide();
+        }
+        private void GoToMainWindow(object sender, RoutedEventArgs e)
+        {
+            MainWindow Window = new MainWindow();
+            Window.Show();
+            this.Hide();
+        }
+        private void GoToBetMaking(object sender, RoutedEventArgs e)
+        {
+            MakeBetWindow Window = new MakeBetWindow();
+            Window.Show();
+            this.Hide();
+        }
         private void ConfirmBet(object sender, RoutedEventArgs e)
         {
             if (int.TryParse(txtBetAmount.Text, out int betAmount))
