@@ -56,10 +56,10 @@ namespace Rat_race
             return track;
         }
 
-        //public void ConductRace(Race race)
-        //{
+        public void ConductRace(Race race)
+        {
 
-        //}
+        }
 
         public string ViewRaceLog(Race race) //Der skal ikke stå RaceRepport, da det hedder log andre steder
         {

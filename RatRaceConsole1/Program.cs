@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Numerics;
 using System.Security.Cryptography.X509Certificates;
 using Rat_race;
-using Rat_race.Repository;
+using RatRaceBLL;
 
 namespace RatRaceConsole1
 {
@@ -14,7 +14,8 @@ namespace RatRaceConsole1
             // Initialize necessary objects
             BookMaker bookMaker = new BookMaker();
             RatRaceRepository ratRaceRepository = new RatRaceRepository();
-            RaceManager manager = ratRaceRepository.Load();
+            RaceManager manager = new RaceManager(ratRaceRepository);
+            manager = ratRaceRepository.Load(manager);
             Player player = new Player();
             //manager = ratRaceRepository.Load();
 

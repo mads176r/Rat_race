@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\RatRaceBLL\RatRaceBLL.csproj" />
     <ProjectReference Include="..\Rat_race\Rat_race.csproj" />
   </ItemGroup>
 
