@@ -29,7 +29,6 @@ namespace RatRaceWeb.Controllers
         // GET: BetController/Create
         public ActionResult Create()
         {
-            manager.PlaceBet();
             return View();
         }
 

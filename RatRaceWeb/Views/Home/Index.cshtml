@@ -2,7 +2,14 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps  ASP.NET Core</a>.</p>
-</div>
+<form method="post" asp-action="LoginToPlayer">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required />
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required />
+
+    <p style="color: red">@TempData["ErrorMessage"]</p>
+
+    <button type="submit">Submit</button>
+</form>

@@ -42,21 +42,12 @@ namespace RatRaceConsole1
 
             //bruger indtaster login
 
-            Console.WriteLine("Insert username");
-
-            string username = Console.ReadLine();
-
-            Console.WriteLine("Insert password");
-
-            string password = Console.ReadLine();
-
-            while (manager.RaceManager.LoginToPlayer(username, password) == null)
+            while (player == null)
             {
-                Console.WriteLine("Try again");
                 Console.Write("Username: ");
-                username = Console.ReadLine();
+                string username = Console.ReadLine();
                 Console.Write("Password: ");
-                password = Console.ReadLine();
+                string password = Console.ReadLine();
                 player = manager.RaceManager.LoginToPlayer(username, password);
             }
 

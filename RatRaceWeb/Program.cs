@@ -1,4 +1,5 @@
 using RatRaceBLL;
+using RatRaceWeb.Services;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace RatRaceWeb
@@ -9,7 +10,13 @@ namespace RatRaceWeb
         {
             var builder = WebApplication.CreateBuilder(args);
 
+            Manager manager = new Manager();
+            RatRaceRepository ratRaceRepository = new RatRaceRepository();
+            manager.RaceManager = ratRaceRepository.Load(manager.RaceManager);
+
             // Add services to the container.
+            builder.Services.AddSingleton(new ManagerService(manager, ratRaceRepository));
+
             builder.Services.AddControllersWithViews();
 
             var app = builder.Build();
@@ -35,8 +42,7 @@ namespace RatRaceWeb
 
             app.Run();
 
-            Manager manager = new Manager();
-            RatRaceRepository ratRaceRepository = new RatRaceRepository();
+            
             
         }
     }
